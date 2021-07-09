@@ -1,0 +1,15 @@
+@import "../../../assets/scss/fonts.scss";
+
+.login-button {
+  width: 100%;
+  margin-top: 1rem;
+  background: #3988ff;
+  border: 1px solid #3988ff;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: #ffffff;
+  height: 46px;
+  font-family: $roboto-regular;
+  font-size: 18px;
+  line-height: 21px;
+}

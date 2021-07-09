@@ -12,52 +12,6 @@
     border-radius: 8px;
     width: 474px;
     height: 510px;
-    .login-box-form {
-      .form-row {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        .form-group {
-          width: 80%;
-          input {
-            border: 1px solid #cccccc;
-            box-sizing: border-box;
-            border-radius: 8px;
-            height: 46px;
-          }
-
-          .forgot-password-link {
-            float: right;
-            margin-top: 1rem;
-            span {
-              color: #3988ff;
-              font-family: $roboto-regular;
-              font-size: 18px;
-              line-height: 21px;
-              cursor: pointer;
-            }
-          }
-
-          .login-button {
-            width: 100%;
-            margin-top: 1rem;
-            background: #3988ff;
-            border: 1px solid #3988ff;
-            box-sizing: border-box;
-            border-radius: 8px;
-            color: #ffffff;
-            height: 46px;
-            font-family: $roboto-regular;
-            font-size: 18px;
-            line-height: 21px;
-          }
-        }
-        .form-group:not(:first-child) {
-          margin-top: 1rem;
-        }
-      }
-    }
   }
 }
 
@@ -69,23 +23,6 @@
       background: #2e2e2e;
       p {
         color: #ffffff;
-      }
-    }
-
-    .login-box-form {
-      .form-row {
-        .form-group {
-          label {
-            color: #ffffff;
-          }
-          input {
-            background: #63666a;
-            color: #ffffff;
-          }
-          input::placeholder {
-            color: #9e9e9e;
-          }
-        }
       }
     }
   }
@@ -101,22 +38,23 @@
         color: #000000;
       }
     }
+  }
+}
 
-    .login-box-form {
-      .form-row {
-        .form-group {
-          label {
-            color: #000000;
-          }
-          input {
-            background: #e5e5e5;
-            color: #000000;
-          }
-          input:focus {
-            background: #ffffff;
-          }
-        }
-      }
+@media screen and (max-width: 600px) {
+  .container-fluid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    .login-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      width: 100%;
+      border-radius: 0;
     }
   }
 }
