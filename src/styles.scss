@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/fonts.scss";
+@import "./assets/scss/colors.scss";
+
+* {
+  text-decoration: none;
+}
+
+*,
+*:focus {
+  outline: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+main {
+  min-height: calc(100% - 591px);
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
