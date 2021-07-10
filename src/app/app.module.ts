@@ -9,6 +9,7 @@ import { LogoBoxComponent } from './components/logo-box/logo-box.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FormButtonComponent } from './components/form-button/form-button.component';
 import { PasswordFormComponent } from './components/password-form/password-form.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PasswordFormComponent } from './components/password-form/password-form.
     LoginFormComponent,
     FormButtonComponent,
     PasswordFormComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

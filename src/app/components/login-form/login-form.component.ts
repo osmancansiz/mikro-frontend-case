@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { RequestService } from '../../core/services/request.service'
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -11,7 +11,7 @@ export class LoginFormComponent implements OnInit {
   submitted = false;
   loading = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private requestService: RequestService) {}
 
   ngOnInit(): void {
     this.initLoginForm();
@@ -33,7 +33,17 @@ export class LoginFormComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     } else {
-      console.log(this.loginForm.value);
+      this.loading = true;
+      this.requestService.logIn(this.loginForm.value.email, this.loginForm.value.password)
+      .then((result) => {
+        this.loading = false;
+        alert("Login Successfully");
+        console.log(result)
+      }).catch((err) => {
+        this.loading = false;
+        alert(err.message);
+        throw err;
+      });
     }
   }
 }

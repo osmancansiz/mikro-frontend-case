@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { RequestService } from '../../core/services/request.service'
 @Component({
   selector: 'app-password-form',
   templateUrl: './password-form.component.html',
@@ -11,7 +11,7 @@ export class PasswordFormComponent implements OnInit {
   submitted = false;
   loading = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private requestService: RequestService) {}
 
   ngOnInit(): void {
     this.initPasswordForm();
@@ -32,7 +32,17 @@ export class PasswordFormComponent implements OnInit {
     if (this.passwordForm.invalid) {
       return;
     } else {
-      console.log(this.passwordForm.value);
+      this.loading = true;
+      this.requestService.resetPassword(this.passwordForm.value.email)
+      .then((result) => {
+        this.loading = false;
+        alert("Reset Password Request Successfully, Please control your e-mail.");
+        console.log(result)
+      }).catch((err) => {
+        this.loading = false;
+        alert(err.message);
+        throw err;
+      });
     }
   }
 
